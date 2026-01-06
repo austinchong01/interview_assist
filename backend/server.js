@@ -17,7 +17,6 @@ app.use("/", indexRouter);
 
 // Health check endpoint
 app.get("/health", (req, res) => {
-  console.log("reached HEALTH")
   res.status(200).json({
     status: "healthy",
     timestamp: new Date().toISOString(),

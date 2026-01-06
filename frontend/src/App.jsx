@@ -8,8 +8,7 @@ function App() {
   useEffect(() => {
     const testBackend = async () => {
       const result = await api.test();
-      console.log(result)
-      if (result.success) setMessage(result);
+      if (result.success) setMessage(result.data.timestamp);
     };
     testBackend();
   }, []);
