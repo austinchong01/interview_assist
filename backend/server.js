@@ -12,8 +12,9 @@ app.use(
   })
 );
 
-app.use(express.urlencoded({ extended: true }));
-app.use("/", indexRouter);
+app.use(express.urlencoded({ extended: false}));
+app.use(express.json());
+
 
 // Health check endpoint
 app.get("/health", (req, res) => {
@@ -24,5 +25,6 @@ app.get("/health", (req, res) => {
   });
 });
 
-const PORT = process.env.PORT;
-app.listen(PORT, () => console.log(`Express app listening on port ${PORT}!`));
+app.use("/", indexRouter);
+
+app.listen(PORT, () => console.log(`Express app listening on port ${process.env.PORT}!`));
