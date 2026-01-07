@@ -1,6 +1,6 @@
 const API_BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
-export const api = {
+export const test = {
   async test() {
     try {
       const response = await fetch(`${API_BASE_URL}/test`);

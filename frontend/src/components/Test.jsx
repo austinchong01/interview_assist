@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { api } from "../services/api";
+import { test } from "../services/test";
 
 function Test() {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
     const testBackend = async () => {
-      const result = await api.test();
+      const result = await test.test();
       if (result.success) setMessage(result.data.test);
     };
     testBackend();

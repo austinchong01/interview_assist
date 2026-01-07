@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { api } from '../services/api';
+import { test } from '../services/test';
 
 const Health = () => {
   const [message, setMessage] = useState("Testing connection...");
@@ -8,7 +8,7 @@ const Health = () => {
 
   useEffect(() => {
     const healthConnection = async () => {
-      const result = await api.testConnection();
+      const result = await test.testConnection();
 
       if (result.success) {
         setMessage(`✓ Connection successful!`);
