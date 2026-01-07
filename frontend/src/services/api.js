@@ -3,14 +3,10 @@ const API_BASE_URL = import.meta.env.VITE_BACKEND_URL;
 export const api = {
   async test() {
     try {
-      const response = await fetch(`${API_BASE_URL}/health`, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-          },
-      });
-
+      const response = await fetch(`${API_BASE_URL}/test`);
       const data = await response.json();
+      console.log(data)
+
       if (!response.ok) throw new Error(data.message);
 
       return { success: true, data };
